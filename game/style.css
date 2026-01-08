@@ -1,0 +1,87 @@
+body, td, input, textarea {
+font-family: Arial;
+}
+
+body {
+background-color: #374241;
+color: white;
+}
+
+.MainContainer {
+width: 250px;
+margin: 0px auto;
+margin-top: 40px;
+}
+
+h1 {
+margin-bottom: 30px;
+text-align: center;
+text-transform: uppercase;
+color: white;
+font-weight: bold;
+font-size: 35px;
+letter-spacing: 1px;
+}
+
+textarea, input {
+font-size: 16px;
+border: 0;
+padding: 10px;
+border-radius: 4px;
+width: 100%;
+display: block;
+text-align: center;
+background-color: #ffffff;
+margin-bottom: 20px;
+box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+textarea {
+height: 120px;
+}
+
+input[type="submit"] {
+background-color: #A6635D;
+color: white;
+font-weight: bold;
+text-transform: uppercase;
+cursor: pointer;
+transition: 0.2s;
+}
+
+input[type="submit"]:hover {
+background-color: #783B36;
+}
+
+input[type=submit], input[type=button], input[type=text] {
+-webkit-appearance: none;
+}
+
+.LeftIcon {
+text-align: left;
+background-size: 16px;
+background-repeat: no-repeat;
+background-position: 10px center;
+padding-left: 35px;
+}
+
+.LeftIcon.Star { background-image: url("img/star.svg"); }
+.LeftIcon.Square { background-image: url("img/square.svg"); }
+.LeftIcon.Circle { background-image: url("img/circle.svg"); }
+.LeftIcon.Triangle { background-image: url("img/triangle.svg"); }
+.LeftIcon.Equal { background-image: url("img/equal.svg"); }
+
+.Box {
+box-shadow: 0 0 20px rgba(0,0,0,0.2);
+border-radius: 4px;
+padding: 20px;
+}
+
+.Red { background-color: #BF1725; color: white; }
+.DarkGreen { background-color: #374241; color: white; }
+.Green { background-color: #4D5958; color: white; }
+.LightGrey { background-color: #F0F0F0; color: #333333; }
+
+.BreakWord {
+word-wrap: break-word;
+}

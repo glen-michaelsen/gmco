@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #374241;
+    font: 400 16px/25px 'Open Sans';
+    color: #FFF;
+    padding: 0 0 60px 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+
+h1 {
+    font-size: 28px;
+    line-height: 28px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 50px;
+    line-height: 55px;
+    margin-bottom: 30px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    z-index: 10;
+}
+
+.text-red { color: #A6635D; }
+
+.center {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.top-bar {
+    background-color: #2e3535;
+    transition: 0.5s;
+}
+
+
+.head {
+    padding: 40px 0 20px 0;
+}
+
+.head img {
+    max-width: 70%;
+}
+
+.content {
+    overflow: auto;
+    margin: 0 -20px;
+}
+
+.footer {
+    border-top: 1px solid #FFFFFF22;
+    border-bottom: 1px solid #FFFFFF22;
+}
+
+.projects {
+    list-style-type: none;
+    overflow: auto;
+    padding: 10px 0;
+}
+
+.projects li {
+    float: left;
+    margin-right: 5px;
+}
+
+.projects li a {
+    display: block;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 7px;
+}
+
+.projects li a:hover {
+    background-color: #A6635D;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.10);
+}
+
+.content .left {
+    width: 30%;
+    float: left;
+    padding: 0 20px 20px 20px;
+}
+
+.content .left img.profile {
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.10);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.content .right {
+    width: 70%;
+    float: right;
+    padding: 0 20px 20px 20px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    grid-column-gap: 20px;
+    margin-top: 40px;
+}
+
+.services a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A6635D;
+    width: 100%;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.10);
+    padding: 30px 40px;
+    margin-bottom: 20px;
+    transition: 0.5s;
+}
+
+.services a:hover {
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.10);
+}
+
+@media (max-width: 600px) {
+    .content .left, .content .right { width: 100%; }
+    .services { grid-template-columns: repeat(1, 1fr); }
+    .head { text-align: center; }
+}

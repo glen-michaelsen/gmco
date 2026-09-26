@@ -1,83 +1,431 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="da">
 <head>
-	<title>Glen Michaelsen - Passioneret iværksætter, musiker og marketing-specialist.</title> 
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glen Michaelsen – Iværksætter, musiker og marketing-specialist</title>
+  <meta name="description" content="Glen Michaelsen – passioneret iværksætter, musiker og marketing-specialist. Bag Trenodo og Čujemo se." />
+  <meta name="theme-color" content="#101614" />
+  <link rel="icon" type="image/png" href="/inc/fav/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/inc/fav/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="/inc/fav/favicon-196x196.png" sizes="196x196" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/inc/fav/apple-touch-icon-152x152.png" />
+  <meta property="og:title" content="Glen Michaelsen" />
+  <meta property="og:description" content="Passioneret iværksætter, musiker og marketing-specialist. Bag Trenodo og Čujemo se." />
+  <meta property="og:image" content="https://gmco.dk/inc/images/glen-michaelsen.jpg" />
+  <meta property="og:url" content="https://gmco.dk" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #101614;
+      --bg-2: #151d1b;
+      --surface: #1b2523;
+      --line: rgba(243, 239, 232, 0.09);
+      --text: #f3efe8;
+      --muted: #a3aca8;
+      --accent: #de8373;         /* modern take on the old #A6635D red dot */
+      --accent-soft: rgba(222, 131, 115, 0.14);
+      --trenodo: #825abe;
+      --trenodo-cream: #fdfaf6;
+      --trenodo-ink: #2d231b;
+      --cujemo: #8023ff;
+      --radius: 28px;
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "Inter", system-ui, -apple-system, sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font: 400 17px/1.65 var(--sans);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+    .dot { color: var(--accent); }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent); }
 
-    <meta http-equiv="content-language" content="da-DK" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    /* ---------- Nav ---------- */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      background: rgba(16, 22, 20, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+    .nav-logo img { height: 40px; width: auto; }
+    .nav-links { display: flex; gap: 34px; font-size: 15px; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+    .nav-social { display: flex; gap: 10px; }
+    .icon-btn {
+      width: 40px; height: 40px; border-radius: 50%;
+      display: grid; place-items: center;
+      border: 1px solid var(--line); color: var(--muted);
+      transition: .25s;
+    }
+    .icon-btn:hover { color: var(--text); border-color: var(--accent); background: var(--accent-soft); }
+    .icon-btn svg { width: 17px; height: 17px; fill: currentColor; }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link href="/inc/css/style.css" rel="stylesheet" />
- 
+    /* ---------- Hero ---------- */
+    .hero { position: relative; padding: 110px 0 90px; }
+    .hero::before {
+      content: ""; position: absolute; inset: -200px 0 auto 40%; height: 700px;
+      background: radial-gradient(closest-side, rgba(222,131,115,.16), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.4fr .8fr; gap: 64px; align-items: center; position: relative; }
+    .hero h1 {
+      font-family: var(--serif); font-weight: 350; font-variation-settings: "opsz" 144;
+      font-size: clamp(42px, 5.6vw, 74px); line-height: 1.02; letter-spacing: -0.025em;
+      margin: 22px 0 30px;
+    }
+    .hero h1 em { font-style: italic; font-weight: 300; color: var(--accent); }
+    .hero p.lead { font-size: 19px; color: var(--muted); max-width: 560px; }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 40px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 15px 26px; border-radius: 999px; font-weight: 500; font-size: 15px;
+      transition: .25s;
+    }
+    .btn-primary { background: var(--text); color: var(--bg); }
+    .btn-primary:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
+    .btn-ghost { border: 1px solid var(--line); }
+    .btn-ghost:hover { border-color: var(--text); }
+    .portrait { position: relative; justify-self: end; width: 100%; max-width: 400px; }
+    .portrait img {
+      width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: 50% 30%;
+      border-radius: 220px 220px var(--radius) var(--radius);
+      filter: saturate(.92);
+    }
+    .portrait::after {
+      content: ""; position: absolute; inset: 18px -18px -18px 18px; z-index: -1;
+      border: 1px solid rgba(222,131,115,.45);
+      border-radius: 220px 220px var(--radius) var(--radius);
+    }
+    .portrait .badge {
+      position: absolute; left: -34px; bottom: 44px;
+      background: rgba(27,37,35,.85); backdrop-filter: blur(10px);
+      border: 1px solid var(--line); border-radius: 18px;
+      padding: 14px 18px; display: flex; align-items: center; gap: 12px;
+      font-size: 14px; box-shadow: 0 20px 40px -18px rgba(0,0,0,.6);
+    }
+    .badge .pulse { width: 10px; height: 10px; border-radius: 50%; background: #6fd49a; box-shadow: 0 0 0 5px rgba(111,212,154,.18); }
+    .badge small { display: block; color: var(--muted); font-size: 12px; }
 
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/inc/fav/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/inc/fav/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/inc/fav/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/inc/fav/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/inc/fav/apple-touch-icon-60x60.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/inc/fav/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/inc/fav/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/inc/fav/apple-touch-icon-152x152.png" />
-    <link rel="icon" type="image/png" href="/inc/fav/favicon-196x196.png" sizes="196x196" />
-    <link rel="icon" type="image/png" href="/inc/fav/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" href="/inc/fav/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/inc/fav/favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="/inc/fav/favicon-128.png" sizes="128x128" />
-    <meta name="application-name" content="&nbsp;"/>
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="/inc/fav/mstile-144x144.png" />
-    <meta name="msapplication-square70x70logo" content="/inc/fav/mstile-70x70.png" />
-    <meta name="msapplication-square150x150logo" content="/inc/fav/mstile-150x150.png" />
-    <meta name="msapplication-wide310x150logo" content="/inc/fav/mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="/inc/fav/mstile-310x310.png" />
+    .facts {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line); margin-top: 90px;
+    }
+    .fact { padding: 30px 0 0; }
+    .fact + .fact { padding-left: 32px; border-left: 1px solid var(--line); }
+    .fact strong { display: block; font-family: var(--serif); font-weight: 350; font-size: 44px; line-height: 1; margin-bottom: 8px; }
+    .fact span { color: var(--muted); font-size: 15px; }
+
+    /* ---------- Sections ---------- */
+    section { padding: 110px 0; }
+    .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 56px; flex-wrap: wrap; }
+    .sec-head h2 {
+      font-family: var(--serif); font-weight: 350; font-size: clamp(34px, 4.4vw, 56px);
+      line-height: 1.05; letter-spacing: -0.02em; margin-top: 16px;
+    }
+    .sec-head p { color: var(--muted); max-width: 400px; }
+
+    /* ---------- Projects ---------- */
+    .projects { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .project {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      border-radius: var(--radius); overflow: hidden; min-height: 520px;
+    }
+    .project + .project { margin-top: 32px; }
+    .project-body { padding: 56px; display: flex; flex-direction: column; }
+    .project-logo { height: 44px; width: auto; margin-bottom: 36px; align-self: flex-start; }
+    .tag {
+      align-self: flex-start; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      padding: 7px 13px; border-radius: 999px; margin-bottom: 20px;
+    }
+    .project h3 { font-family: var(--serif); font-weight: 400; font-size: 36px; line-height: 1.12; letter-spacing: -0.015em; margin-bottom: 18px; }
+    .project p { font-size: 16.5px; max-width: 460px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 36px; }
+    .chip { font-size: 13.5px; padding: 8px 14px; border-radius: 999px; }
+    .project .btn { margin-top: auto; align-self: flex-start; }
+    .project-visual { position: relative; display: grid; place-items: center; padding: 48px; overflow: hidden; }
+
+    /* Trenodo — cream / lavender, echoes trenodo.com */
+    .p-trenodo { background: var(--trenodo-cream); color: var(--trenodo-ink); }
+    .p-trenodo p { color: #6b5d52; }
+    .p-trenodo .tag { background: rgba(130,90,190,.12); color: var(--trenodo); }
+    .p-trenodo .chip { background: #f3ede6; color: var(--trenodo-ink); }
+    .p-trenodo .btn { background: var(--trenodo-ink); color: var(--trenodo-cream); }
+    .p-trenodo .btn:hover { background: var(--trenodo); transform: translateY(-2px); }
+    .p-trenodo .project-visual { background: linear-gradient(135deg, #8a63c4, #b294e0); }
+    .p-trenodo .project-visual::before {
+      content: ""; position: absolute; inset: 0;
+      background: repeating-linear-gradient(180deg, transparent 0 62px, rgba(255,255,255,.18) 62px 64px);
+    }
+    .tn-app {
+      position: relative; width: 100%; max-width: 360px; background: var(--trenodo-cream);
+      border-radius: 22px; padding: 22px; box-shadow: 0 30px 60px -20px rgba(45,35,27,.5);
+      transform: rotate(-2deg);
+    }
+    .tn-app .url { font-size: 11px; color: #a39487; margin-bottom: 14px; }
+    .tn-app h4 { font-family: var(--serif); font-weight: 500; font-size: 22px; }
+    .tn-app .sub { font-size: 13px; color: #8a7c70; margin-bottom: 16px; }
+    .tn-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .tn-tool { background: #fff; border: 1px solid #efe7de; border-radius: 14px; padding: 13px; }
+    .tn-tool b { display: block; font-size: 14px; margin: 6px 0 2px; }
+    .tn-tool span { font-size: 11.5px; color: #8a7c70; }
+    .tn-tool i { font-style: normal; font-size: 18px; }
+    .tn-free { position: absolute; top: -14px; right: -14px; background: var(--trenodo-ink); color: #fff; font-size: 12px; font-weight: 600; padding: 8px 14px; border-radius: 999px; transform: rotate(6deg); }
+
+    /* Čujemo se — deep violet */
+    .p-cujemo { background: linear-gradient(160deg, #2a0d5c, #16072f); color: #fff; }
+    .p-cujemo p { color: #c9b8ec; }
+    .p-cujemo .tag { background: rgba(216,194,255,.14); color: #d8c2ff; }
+    .p-cujemo .chip { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); color: #eadfff; }
+    .p-cujemo .btn { background: var(--cujemo); color: #fff; }
+    .p-cujemo .btn:hover { background: #9a4dff; transform: translateY(-2px); }
+    .p-cujemo .project-visual { background: radial-gradient(circle at 30% 30%, #9a4dff 0, #8023ff 35%, #4b10a3 100%); }
+    .cj-stack { position: relative; width: 100%; max-width: 340px; height: 300px; }
+    .cj-card {
+      position: absolute; inset: 0; border-radius: 22px; background: #fff; color: #16072f;
+      padding: 28px; display: flex; flex-direction: column; box-shadow: 0 30px 60px -20px rgba(22,7,47,.7);
+    }
+    .cj-card.back1 { transform: rotate(7deg) translate(18px, 6px); opacity: .45; }
+    .cj-card.back2 { transform: rotate(3.5deg) translate(9px, 3px); opacity: .7; }
+    .cj-card .lbl { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #8a7aa8; }
+    .cj-card .word { font-family: var(--serif); font-size: 56px; font-weight: 450; line-height: 1; margin: 30px 0 8px; }
+    .cj-card .tr { font-size: 16px; color: #6e5d8f; }
+    .cj-card .row { margin-top: auto; display: flex; gap: 8px; }
+    .cj-card .row span { flex: 1; text-align: center; font-size: 13px; font-weight: 600; padding: 11px 0; border-radius: 12px; }
+    .cj-card .row .no { background: #f2ecfb; color: #6e5d8f; }
+    .cj-card .row .yes { background: var(--cujemo); color: #fff; }
+    .cj-streak { position: absolute; top: -18px; left: -18px; z-index: 3; background: #16072f; color: #fff; border: 1px solid rgba(255,255,255,.15); font-size: 13px; font-weight: 600; padding: 9px 15px; border-radius: 999px; transform: rotate(-5deg); }
+
+    /* ---------- Earlier work + creative ---------- */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 40px; }
+    .panel h3 { font-family: var(--serif); font-weight: 400; font-size: 28px; margin: 14px 0 26px; }
+    .list a {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 0; border-top: 1px solid var(--line); font-size: 18px; transition: .25s;
+    }
+    .list a:last-child { border-bottom: 1px solid var(--line); }
+    .list a span { color: var(--muted); font-size: 14px; }
+    .list a:hover { padding-left: 10px; color: var(--accent); }
+    .services { display: grid; gap: 14px; }
+    .service {
+      display: flex; align-items: center; justify-content: space-between;
+      border: 1px solid var(--line); border-radius: 18px; padding: 20px 24px; transition: .25s;
+    }
+    .service:hover { border-color: var(--accent); background: var(--accent-soft); }
+    .service img[alt="SoundCloud"] { height: 34px; }
+    .service img { height: 22px; width: auto; opacity: .9; }
+    .service span { color: var(--muted); font-size: 14px; }
+    /* ---------- Footer ---------- */
+    footer { border-top: 1px solid var(--line); padding: 34px 0; color: var(--muted); font-size: 14px; }
+    footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    footer img { height: 30px; width: auto; opacity: .7; }
+
+    /* ---------- Motion ---------- */
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+      .reveal.d1 { animation-delay: .08s; } .reveal.d2 { animation-delay: .16s; } .reveal.d3 { animation-delay: .24s; }
+      @keyframes rise { from { opacity: 0; transform: translateY(18px); } }
+      .tn-app, .cj-stack { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+      .p-trenodo:hover .tn-app { transform: rotate(0) scale(1.03); }
+      .p-cujemo:hover .cj-stack { transform: rotate(-2deg) scale(1.03); }
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .hero { padding: 64px 0 60px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+      .portrait { justify-self: start; max-width: 320px; }
+      .portrait .badge { left: auto; right: -12px; }
+      .project { grid-template-columns: 1fr; }
+      .project-visual { min-height: 400px; order: -1; }
+      .project-body { padding: 40px 28px; }
+      .grid-2 { grid-template-columns: 1fr; }
+      section { padding: 80px 0; }
+    }
+    @media (max-width: 560px) {
+      .wrap { padding: 0 18px; }
+      .nav-logo img { height: 32px; }
+      .facts { grid-template-columns: 1fr; margin-top: 60px; }
+      .fact + .fact { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); margin-top: 26px; }
+      .panel { padding: 28px 22px; }
+      .project h3 { font-size: 30px; }
+      .cj-card .word { font-size: 46px; }
+    }
+  </style>
 </head>
-
 <body>
-    <div class="top-bar">
-        <div class="center">
-            <ul class="projects">
-                <li><a target="_blank" href="https://www.facebook.com/Glenovic"><i class="fa-brands fa-facebook-square"></i> &nbsp;Facebook</a></li>
-                <li><a target="_blank" href="https://www.linkedin.com/in/glenmichaelsen/"><i class="fa-brands fa-linkedin"></i> &nbsp;LinkedIn</a></li>
-            </ul>
+
+  <header class="nav">
+    <div class="wrap">
+      <a href="#" class="nav-logo" aria-label="Glen Michaelsen"><img src="/inc/images/logo.svg" alt="Glen Michaelsen" /></a>
+      <nav class="nav-links">
+        <a href="#projekter">Projekter</a>
+        <a href="#arbejde">Tidligere arbejde</a>
+        <a href="https://www.linkedin.com/in/glenmichaelsen/" target="_blank" rel="noopener">Kontakt</a>
+      </nav>
+      <div class="nav-social">
+        <a class="icon-btn" href="https://www.linkedin.com/in/glenmichaelsen/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a class="icon-btn" href="https://www.facebook.com/Glenovic" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <div class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <span class="eyebrow reveal">Glen Michaelsen</span>
+            <h1 class="reveal d1">Passioneret iværksætter, <em>musiker</em> og marketing&#8209;specialist<span class="dot">.</span></h1>
+            <p class="lead reveal d2">Som iværksætter kombinerer jeg min kæmpe passion for musikken med mine 15 års erfaring inden for markedsføring. Her arbejder jeg for mine to største formål, som er at skabe mere musik i Danmark og bedre vilkår for danske musikere.</p>
+            <div class="hero-cta reveal d3">
+              <a class="btn btn-primary" href="#projekter">Se mine projekter →</a>
+              <a class="btn btn-ghost" href="https://www.linkedin.com/in/glenmichaelsen/" target="_blank" rel="noopener">Kontakt mig</a>
+            </div>
+          </div>
+          <div class="portrait reveal d2">
+            <img src="/inc/images/glen-michaelsen.jpg" alt="Portræt af Glen Michaelsen" />
+            <div class="badge"><span class="pulse"></span><div>Bygger lige nu<small>Trenodo &amp; Čujemo se</small></div></div>
+          </div>
         </div>
+
+        <div class="facts">
+          <div class="fact"><strong>15+</strong><span>års erfaring med markedsføring</span></div>
+          <div class="fact"><strong>2</strong><span>aktive projekter lige nu</span></div>
+          <div class="fact"><strong>♫</strong><span>Guitar, sangskrivning og vokal</span></div>
+        </div>
+      </div>
     </div>
 
-    <div class="center">
-        <div class="head"><img src="/inc/images/logo.svg" /></div>
-
-        <div class="content">
-            <div class="left">
-                <img class="profile" src="/inc/images/glen-michaelsen.jpg" />
-            </div>
-            <div class="right">
-                <h1>Glen Michaelsen</h1> 
-                <h2>Passioneret iværksætter, musiker og marketing-specialist<span class="text-red">.</span></h2>
-                <p>
-                    Som iværksætter kombinerer jeg min kæmpe passion for musikken med mine 15 års erfaring inden for markedsføring. Her arbejder jeg for mine to største formål, som er at skabe mere musik i Danmark og bedre vilkår for danske musikere.
-                </p>
-
-                <div class="services">
-                    <a target="_blank" href="https://medium.com/@glenmichaelsen"><img src="/inc/images/medium.svg" /></a>
-                    <a target="_blank" href="https://soundcloud.com/glenmichaelsen"><img src="/inc/images/soundcloud.svg" /></a>
-                    <a target="_blank" href="https://unsplash.com/@glenm"><img src="/inc/images/unsplash.svg" /></a>
-                </div>
-            </div>
+    <!-- PROJECTS -->
+    <section class="projects" id="projekter">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="eyebrow">Det arbejder jeg på</span>
+            <h2>Mine to hovedprojekter<span class="dot">.</span></h2>
+          </div>
+          <p>Små, fokuserede værktøjer bygget med kærlighed – til musikere og til alle, der vil lære et nyt sprog.</p>
         </div>
 
-        <div class="footer">
-            <ul class="projects">
-                <li><a target="_blank" href="https://muuv.dk">MUUV</a></li>
-                <li><a target="_blank" href="https://genvejstast.dk/">Genvejstast</a></li>
-                <li><a target="_blank" href="https://leadtime.dk/">Leadtime</a></li>
-            </ul>
+        <!-- Trenodo -->
+        <article class="project p-trenodo">
+          <div class="project-body">
+            <img class="project-logo" src="/inc/images/trenodo-logo.svg" alt="Trenodo" />
+            <span class="tag">Til musikere</span>
+            <h3>Værktøjskassen, der gør musikerlivet lidt nemmere.</h3>
+            <p>Undervisning, promovering og koncerter – samlet i én konto i stedet for fire apps, der ikke taler sammen. Lavet til musikere, ikke lånt fra alle mulige andre.</p>
+            <div class="chips">
+              <span class="chip">🎓 Tutor</span>
+              <span class="chip">🔗 Link in Bio</span>
+              <span class="chip">📸 Press Kit</span>
+              <span class="chip">🎤 Setlist</span>
+            </div>
+            <a class="btn" href="https://trenodo.com" target="_blank" rel="noopener">Besøg trenodo.com →</a>
+          </div>
+          <div class="project-visual">
+            <div class="tn-app">
+              <span class="tn-free">Link in Bio &amp; Setlist er gratis</span>
+              <div class="url">trenodo.com/account</div>
+              <h4>Hej, Glen</h4>
+              <div class="sub">Alle dine værktøjer, samlet ét sted.</div>
+              <div class="tn-tools">
+                <div class="tn-tool"><i>🎓</i><b>Tutor</b><span>6 elever · 24 emner</span></div>
+                <div class="tn-tool"><i>🔗</i><b>Link in Bio</b><span>Live på /@glen</span></div>
+                <div class="tn-tool"><i>📸</i><b>Press Kit</b><span>4 udgivelser</span></div>
+                <div class="tn-tool"><i>🎤</i><b>Setlists</b><span>5 koncerter</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Čujemo se -->
+        <article class="project p-cujemo">
+          <div class="project-visual">
+            <div class="cj-stack">
+              <span class="cj-streak">🔥 12 dage i træk</span>
+              <div class="cj-card back1"></div>
+              <div class="cj-card back2"></div>
+              <div class="cj-card">
+                <span class="lbl">Serbisk &amp; kroatisk</span>
+                <div class="word">hvala</div>
+                <div class="tr">tak · <em>essentielt</em></div>
+                <div class="row"><span class="no">Øv igen</span><span class="yes">Det kan jeg ✓</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-body">
+            <img class="project-logo" src="/inc/images/cujemose-logo-white.svg" alt="Čujemo se" />
+            <span class="tag">Sprog-app · gratis</span>
+            <h3>Lær serbisk og kroatisk – lidt hver dag.</h3>
+            <p>Byg et rigtigt ordforråd, mestr grammatikken og øv dig dagligt – alt samlet ét sted. Spaced repetition holder styr på, hvad du kan, og hvad du stadig lærer.</p>
+            <div class="chips">
+              <span class="chip">700+ ord</span>
+              <span class="chip">1.200+ sætninger</span>
+              <span class="chip">Alle 7 kasus</span>
+              <span class="chip">Daglige spil</span>
+            </div>
+            <a class="btn" href="https://cujemose.com" target="_blank" rel="noopener">Besøg cujemose.com →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EARLIER WORK + CREATIVE -->
+    <section id="arbejde">
+      <div class="wrap">
+        <div class="grid-2">
+          <div class="panel">
+            <span class="eyebrow">Tidligere projekter</span>
+            <h3>Ting jeg har bygget</h3>
+            <div class="list">
+              <a href="https://muuv.dk" target="_blank" rel="noopener">MUUV <span>muuv.dk ↗</span></a>
+              <a href="https://genvejstast.dk/" target="_blank" rel="noopener">Genvejstast <span>genvejstast.dk ↗</span></a>
+              <a href="https://leadtime.dk/" target="_blank" rel="noopener">Leadtime <span>leadtime.dk ↗</span></a>
+            </div>
+          </div>
+          <div class="panel">
+            <span class="eyebrow">Kreative spor</span>
+            <h3>Skriver, spiller og fotograferer</h3>
+            <div class="services">
+              <a class="service" href="https://medium.com/@glenmichaelsen" target="_blank" rel="noopener"><img src="/inc/images/medium.svg" alt="Medium" /><span>Artikler ↗</span></a>
+              <a class="service" href="https://soundcloud.com/glenmichaelsen" target="_blank" rel="noopener"><img src="/inc/images/soundcloud.svg" alt="SoundCloud" /><span>Musik ↗</span></a>
+              <a class="service" href="https://unsplash.com/@glenm" target="_blank" rel="noopener"><img src="/inc/images/unsplash.svg" alt="Unsplash" /><span>Fotos ↗</span></a>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <img src="/inc/images/logo.svg" alt="Glen Michaelsen" />
+      <span>© 2026 Glen Michaelsen · gmco.dk</span>
     </div>
+  </footer>
 
 </body>
-
 </html>

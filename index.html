@@ -64,8 +64,6 @@
     }
     .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
     .nav-logo img { height: 40px; width: auto; }
-    .nav-links { display: flex; gap: 34px; font-size: 15px; color: var(--muted); }
-    .nav-links a:hover { color: var(--text); }
     .nav-social { display: flex; gap: 10px; }
     .icon-btn {
       width: 40px; height: 40px; border-radius: 50%;
@@ -112,24 +110,6 @@
       border: 1px solid rgba(222,131,115,.45);
       border-radius: 220px 220px var(--radius) var(--radius);
     }
-    .portrait .badge {
-      position: absolute; left: -34px; bottom: 44px;
-      background: rgba(27,37,35,.85); backdrop-filter: blur(10px);
-      border: 1px solid var(--line); border-radius: 18px;
-      padding: 14px 18px; display: flex; align-items: center; gap: 12px;
-      font-size: 14px; box-shadow: 0 20px 40px -18px rgba(0,0,0,.6);
-    }
-    .badge .pulse { width: 10px; height: 10px; border-radius: 50%; background: #6fd49a; box-shadow: 0 0 0 5px rgba(111,212,154,.18); }
-    .badge small { display: block; color: var(--muted); font-size: 12px; }
-
-    .facts {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--line); margin-top: 90px;
-    }
-    .fact { padding: 30px 0 0; }
-    .fact + .fact { padding-left: 32px; border-left: 1px solid var(--line); }
-    .fact strong { display: block; font-family: var(--serif); font-weight: 350; font-size: 44px; line-height: 1; margin-bottom: 8px; }
-    .fact span { color: var(--muted); font-size: 15px; }
 
     /* ---------- Sections ---------- */
     section { padding: 110px 0; }
@@ -240,11 +220,9 @@
 
     /* ---------- Responsive ---------- */
     @media (max-width: 960px) {
-      .nav-links { display: none; }
       .hero { padding: 64px 0 60px; }
       .hero-grid { grid-template-columns: 1fr; gap: 56px; }
       .portrait { justify-self: start; max-width: 320px; }
-      .portrait .badge { left: auto; right: -12px; }
       .project { grid-template-columns: 1fr; }
       .project-visual { min-height: 400px; order: -1; }
       .project-body { padding: 40px 28px; }
@@ -254,8 +232,6 @@
     @media (max-width: 560px) {
       .wrap { padding: 0 18px; }
       .nav-logo img { height: 32px; }
-      .facts { grid-template-columns: 1fr; margin-top: 60px; }
-      .fact + .fact { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); margin-top: 26px; }
       .social-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
       .project h3 { font-size: 30px; }
       .cj-card .word { font-size: 46px; }
@@ -267,11 +243,6 @@
   <header class="nav">
     <div class="wrap">
       <a href="#" class="nav-logo" aria-label="Glen Michaelsen"><img src="/inc/images/logo.svg" alt="Glen Michaelsen" /></a>
-      <nav class="nav-links">
-        <a href="#projekter">Projekter</a>
-        <a href="#find-mig">Find mig</a>
-        <a href="https://www.linkedin.com/in/glenmichaelsen/" target="_blank" rel="noopener">Kontakt</a>
-      </nav>
       <div class="nav-social">
         <a class="icon-btn" href="https://www.linkedin.com/in/glenmichaelsen/" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
@@ -299,16 +270,8 @@
           </div>
           <div class="portrait reveal d2">
             <img src="/inc/images/glen-michaelsen.jpg" alt="Portræt af Glen Michaelsen" />
-            <div class="badge"><span class="pulse"></span><div>Bygger lige nu<small>Trenodo &amp; Čujemo se</small></div></div>
           </div>
-        </div>
-
-        <div class="facts">
-          <div class="fact"><strong>15+</strong><span>års erfaring med markedsføring</span></div>
-          <div class="fact"><strong>2</strong><span>aktive projekter lige nu</span></div>
-          <div class="fact"><strong>♫</strong><span>Guitar, sangskrivning og vokal</span></div>
-        </div>
-      </div>
+        </div></div>
     </div>
 
     <!-- PROJECTS -->
@@ -319,7 +282,6 @@
             <span class="eyebrow">Det arbejder jeg på</span>
             <h2>Mine to hovedprojekter<span class="dot">.</span></h2>
           </div>
-          <p>Små, fokuserede værktøjer bygget med kærlighed – til musikere og til alle, der vil lære et nyt sprog.</p>
         </div>
 
         <!-- Trenodo -->
@@ -328,7 +290,7 @@
             <img class="project-logo" src="/inc/images/trenodo-logo.svg" alt="Trenodo" />
             <span class="tag">Til musikere</span>
             <h3>Værktøjskassen, der gør musikerlivet lidt nemmere.</h3>
-            <p>Undervisning, promovering og koncerter – samlet i én konto i stedet for fire apps, der ikke taler sammen. Lavet til musikere, ikke lånt fra alle mulige andre.</p>
+            <p>Undervisning, promovering og koncerter – samlet i én konto i stedet for fire apps, der ikke taler sammen. Lavet specifikt til musikere.</p>
             <div class="chips">
               <span class="chip">🎓 Tutor</span>
               <span class="chip">🔗 Link in Bio</span>
@@ -339,7 +301,7 @@
           </div>
           <div class="project-visual">
             <div class="tn-app">
-              <span class="tn-free">Link in Bio &amp; Setlist er gratis</span>
+              <span class="tn-free">100% gratis</span>
               <div class="url">trenodo.com/account</div>
               <h4>Hej, Glen</h4>
               <div class="sub">Alle dine værktøjer, samlet ét sted.</div>
@@ -372,7 +334,7 @@
             <img class="project-logo" src="/inc/images/cujemose-logo-white.svg" alt="Čujemo se" />
             <span class="tag">Sprog-app · gratis</span>
             <h3>Lær serbisk og kroatisk – lidt hver dag.</h3>
-            <p>Byg et rigtigt ordforråd, mestr grammatikken og øv dig dagligt – alt samlet ét sted. Spaced repetition holder styr på, hvad du kan, og hvad du stadig lærer.</p>
+            <p>Byg et rigtigt ordforråd, mestr grammatikken og øv dig dagligt – alt samlet ét sted. Systemet holder styr på, hvad du kan, og hvad du stadig lærer.</p>
             <div class="chips">
               <span class="chip">700+ ord</span>
               <span class="chip">1.200+ sætninger</span>
